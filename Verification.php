@@ -18,9 +18,8 @@ class Verification
 		// saved in session to compare it after submit//
         $_SESSION['verification_code'] = $rand_code;
 		// send sms//
-		//$sms_response = $this->sendSms($mobile_number, $rand_code);
+		$sms_response = $this->sendSms($mobile_number, $rand_code);
 		// pass json to ajax func//
-	    	$sms_response=1;
 		if($sms_response == 0)
 		{
 			echo json_encode(array("type"=>"error"));
