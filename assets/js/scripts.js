@@ -20,7 +20,7 @@ function sendcode()
 			"action" : "send_code"
 		};
 		$.ajax({
-			url : 'verification.php',
+			url : 'Verification.php',
 			type : 'POST',
 			data : input,
 			success : function(response) {
