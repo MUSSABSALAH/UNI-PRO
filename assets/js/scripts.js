@@ -42,9 +42,17 @@ function sendcode()
 				}
 				else
 				{
-					// Error Div after (reg_form) form
-					$(".error").html("an error accrued when send Verification , contact administrator!");
-					$(".error").show();
+					if(obj.type == "noerror")
+					{
+						$(".error").html("an error accrued when send Verification , number should be like 966*********!");
+						$(".error").show();
+					}
+					else
+					{
+						// Error Div after (reg_form) form
+						$(".error").html("an error accrued when send Verification , contact administrator!");
+						$(".error").show();
+					}
 				}
 				
 			}
