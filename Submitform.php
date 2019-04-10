@@ -69,7 +69,7 @@ class Submitform
 			$message='an error accrued ! <br/> Error in first name!';
 			$type='error';
 		}
-		echo json_encode(array("type"=$type, "message"=>$message));
+		echo json_encode(array("type"=>$type, "message"=>$message));
 	}
 	public function string_validation($str,$min_length,$max_length)
 	{
