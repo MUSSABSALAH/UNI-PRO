@@ -14,10 +14,12 @@ class Verification
     {
         $mobile_number = strip_tags($_POST['phone']);
         //rand four digit (it will send to mon=bile)
-		$rand_code = rand(1000, 9999);
-		// saved in session to compare it after submit//
+	$rand_code = rand(1000, 9999);
+	// saved in session to compare it after submit//
         $_SESSION['verification_code'] = $rand_code;
-		// send sms//
+	// send sms//
+	if(mb_substr($mobile_number, 0, 3) == '966')
+	{
 		$sms_response = $this->sendSms($mobile_number, $rand_code);
 		// pass json to ajax func//
 		if($sms_response == 0)
@@ -28,6 +30,11 @@ class Verification
 		{
 			echo json_encode(array("type"=>"success"));
 		}			
+	}
+	else
+	{
+		echo json_encode(array("type"=>"noerror"));
+	}			
     }
 	function sendSms($number,$code)
 	{
