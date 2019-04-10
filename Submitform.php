@@ -1,12 +1,11 @@
 <?php
 session_start();
-
 class Submitform
 {
     function __construct() 
-	{
+    {
         $this->Validation();
-		//to validate before save db //
+	//to validate before save db //
     }
     public function Validation()
     {
@@ -18,7 +17,7 @@ class Submitform
 		$Phone=strip_tags($_POST['phone']);
 		$verification_code=strip_tags($_POST['v_code']);
 		//Validate First Name //
-		if($this->string_validation($First_name,2,22))
+		/*f($this->string_validation($First_name,2,22))
 		{
 			//Validate Last Name //
 			if($this->string_validation($Last_name,2,22))
@@ -69,8 +68,8 @@ class Submitform
 		{
 			$message='an error accrued ! <br/> Error in first name!';
 			$type='error';
-		}
-		echo json_encode(array("type"=>$type, "message"=>$message));
+		}*/
+		echo json_encode(array("type"='error', "message"=>"hi"));
 	}
 	public function string_validation($str,$min_length,$max_length)
 	{
